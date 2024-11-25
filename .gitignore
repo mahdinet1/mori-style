@@ -1,0 +1,6 @@
+emnedSvc/.venv/
+frontend/node_modules/
+meili_data/
+qdrant_storage/
+
+

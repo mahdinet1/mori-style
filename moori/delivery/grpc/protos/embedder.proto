@@ -1,0 +1,29 @@
+syntax = "proto3";
+package embedder;
+option go_package = "./";
+
+service Embedder {
+  rpc ReturnTextVector(TextToVectorRequest) returns (TextToVectorReply) {}
+  rpc ReturnImageVector(ImageVectorRequest) returns (ImageVectorReply) {}
+
+}
+
+// The request message containing the user's name.
+message TextToVectorRequest {
+  string query = 1;
+}
+
+// The response message containing the greetings
+message TextToVectorReply {
+  repeated float vector = 1;
+}
+
+message ImageVectorRequest {
+  repeated string image_url = 1;
+}
+message ImageVectorReply {
+  repeated Vector vectors = 1;
+}
+message Vector {
+  repeated float vector = 1;
+}
